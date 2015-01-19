@@ -1,0 +1,26 @@
+*  EUCALYPTUS
+
+** Launching Instances
+
+*** Using Console.
+
+**** Log on to your User Console.
+**** Select "Launch New Instance".
+**** In "Create New Instance" wizard, select the "Image" listed. Select "Select Type" to continue.
+**** In the next dialog, you can provide details for your selected Instance such as "number of instances" you wish to launch, the "name" of your instance and the desired "size" of it as well. 
+**** Select the "Availability Zone" in which you wish to launch your instance.
+**** Next, select the correct "Key Pair" and "Security Group" that we created in our earlier steps.
+**** Launch Instance.
+****
+**** Next, launch a Terminal.
+**** > chmod 600 <Key_Pair_Name> 
+**** > ssh -i <Key_Pair_Name> ec2-user@<Instance_IP>
+
+*** Using Command Line:
+
+**** > euca-describe-images
+**** > euca-run-instance <image_id> -g <security_group_name> -k <key_pair_name>>
+**** > euca-describe-instances
+**** > ssh -i <Key_Pair_Name> ec2-user@<Instance_IP>
+
+

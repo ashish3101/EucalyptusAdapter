@@ -1,0 +1,63 @@
+*  EUCALYPTUS
+
+** Getting Started
+*** User Console:
+
+**** Log on to http://10.2.56.20:8888. 
+**** Account Name: demo
+**** Username: admin 
+**** Password: password
+**** Once you enter the credentials, you will be brought over to the Console's main Dashboard. 
+
+*** Creating Security Group
+
+**** Using Console:
+
+***** Log on to your User Console. 
+***** From the Dashboard, select "Network and Security" >> "Security Groups".
+***** Select "Create new Security Group".
+***** In the "Group" tab, provide a "Name" and its "Description".
+***** In Rules Tab, select Protocol , SSH (TCP Port 22).
+***** Click Create Security Group.
+
+**** Using Command Line:
+
+***** euca-add-group -d "<group_description>" group_name [Eg:  euca-add-group -d "My First Security Group" TestGroup]
+***** euca-authorize -P <protocol> -p <port_range> -s <source_IP_range> security_group_name [Eg:  euca-authorize -P tcp -p 22 -s 0.0.0.0/0 TestGroup]
+
+
+*** Creating Key-Pair
+
+**** Using Console:
+
+***** Log on to your User Console. 
+***** From the Dashboard, select "Network and Security" >> "Key Pair".
+***** Select "Create new Key Pair".
+***** In the "Create New Key Pair" Dialog box, provide a suitable name for your Key Pair and select "Create and Download" once done. Save this .pem file.
+
+**** Using Command Line:
+
+***** euca-create-keypair <key_pair_name> > <key_pair_name>.private. [Eg:  euca-create-keypair TestKeypair > TestKeypair.private].
+
+
+*** Creating Volumes
+
+**** Using Console:
+
+***** Log on to your User Console. 
+***** Select the "Storage" >> "Volumes".
+***** Provide Name, Size, Availability zone.
+***** Select "Create Volume".
+***** Once status is available, select the option "More Actions" >> "Attach to Instance".
+
+**** Using Command Line
+
+***** euca-create-volume --zone <availability_zone> --size <in_GB> [Eg:  euca-create-volume --zone CLUSTER01 --size 8].
+***** euca-attach--volume <volume_ID> -i <Instance_ID> -d <Device_Name> [Eg:  euca-attach-volume vol-D8453DE5 -i i-014C4296 -d /dev/sdf].
+
+
+
+
+
+
+

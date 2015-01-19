@@ -1,0 +1,50 @@
+*  EUCALYPTUS
+
+
+** Installation Node Controller:
+
+
+*** Download the [Eucalyptus Faststart iso].
+
+*** Download VM Player.
+
+*** Launch VM Player
+
+**** Create New Virtual Machine
+
+**** Configuration:
+     
+***** Max Disk Space: 100 GB.
+***** Memory: 4 GB.
+***** Processors: 2 (2 Cores per processor).
+***** Enable: Virtualize Intel VT-x/EPT option.  
+
+**** Power on Virtual Machine
+
+**** Select [Install CentOS 6 with Eucalyptus Node Controller] option.       
+     
+**** Skip : [Disk Check Utility].
+
+**** Select appropriate [Language], [Keyboard].
+
+**** Select "Yes, discard any data", under Storage Device Warning.
+
+**** In the next prompt, provide a suitable hostname for your Node Controller (in this case, Euca-NC). Fill in the Static IP details for your VM.
+***** Interface: eth0
+***** Mode: Static
+***** IP Address: 10.2.56.21
+***** Netmask: 255.255.252.0
+***** Gateway: 10.2.56.1
+***** DNS: 192.168.36.222
+
+**** Select [Time Zone Settings], enter [Root Password], select [Use all space].
+
+**** Click "Write changes to disk".
+
+**** Reboot System for completion.
+
+**** After reboot, login to system: euca-login: root &  password: as above.
+
+**** Select your Network Interface that you wish to use to connect with your Frontend - eth0
+
+**** You will be prompted : [This machine is ready and running as a node controller].

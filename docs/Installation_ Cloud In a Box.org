@@ -1,0 +1,57 @@
+*  EUCALYPTUS
+
+
+** Installation Cloud In a Box:
+
+
+*** Download the [Eucalyptus Faststart iso].
+
+*** Download VM Player.
+
+*** Launch VM Player
+
+**** Create New Virtual Machine
+
+**** Configuration:
+     
+***** Max Disk Space: 300 GB.
+***** Memory: 4-6 GB.
+***** Processors: 2 (2 Cores per processor).
+***** Enable: Virtualize Intel VT-x/EPT option.  
+
+**** Power on Virtual Machine
+
+**** Select [Install CentOS 6 with Eucalyptus Front End] option.       
+     
+**** Skip : [Disk Check Utility].
+
+**** Select appropriate [Language], [Keyboard].
+
+**** Select "Yes, discard any data", under Storage Device Warning.
+
+**** In the next prompt, provide a suitable hostname for your Node Controller (in this case, Euca-NC). Fill in the Static IP details for your VM.
+***** Interface: eth0
+***** Mode: Static
+***** IP Address: 10.2.56.20
+***** Netmask: 255.255.252.0
+***** Gateway: 10.2.56.1
+***** DNS: 192.168.36.222
+
+**** Select [Time Zone Settings], enter [Root Password], select [Use all space].
+
+**** Click "Write changes to disk".
+
+**** Provide the [Public IP Range/ List]:    10.2.56.40 - 102.56.80
+
+**** Reboot System for completion.
+
+**** After reboot, we'll see Eucalyptus Cloud Services getting started.
+
+**** After that will be asked to configure Frontend.
+
+**** You need to provide each Node Controller's IP address separated by spaces. Here [10.2.56.20]
+
+**** Create a "User" account for your Frontend.
+
+**** Your configuration is now done. Note down the User Console and Admin Console credentials before you move forward. 
+
